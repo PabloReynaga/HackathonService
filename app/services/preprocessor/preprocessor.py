@@ -15,4 +15,8 @@ def preprocess_file(filepath, db):
         for line in file:
             sentence = preprocess_line(line)
             emb = embed_sentence(sentence, model=MODEL)
-            save_embedding(emb, sentence, db)
+            save_embedding(sentence, emb, db)
+
+
+if __name__ == "__main__":
+    preprocess_file("path-to-local-file")
