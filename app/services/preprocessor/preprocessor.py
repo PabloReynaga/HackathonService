@@ -8,10 +8,11 @@ MODEL = "model-name"
 COLLECTION_NAME = "HACKATHON_COLLECTION"
 
 client = QdrantClient(url="http://localhost:6333/")
-
-client.create_collection(
+client.recreate_collection(
     collection_name=COLLECTION_NAME,
-    vectors_config=qdrant_client.models.VectorParams(size=384, distance=qdrant_client.models.Distance.COSINE)
+    vectors_config=qdrant_client.models.VectorParams(
+        size=384, distance=qdrant_client.models.Distance.COSINE
+    ),
 )
 
 
@@ -29,22 +30,14 @@ def upload_embeddings(collection_name: str, embeddings: list, payloads: list = N
     for i, vector in enumerate(embeddings):
         points.append(
             PointStruct(
-                id=str(uuid.uuid4()),   # generate unique id
+                id=str(uuid.uuid4()),  # generate unique id
                 vector=vector,
-                payload=payloads[i] if payloads and i < len(payloads) else {}
+                payload=payloads[i] if payloads and i < len(payloads) else {},
             )
         )
 
-    client.upsert(
-        collection_name=collection_name,
-        points=points
-    )
+    client.upsert(collection_name=collection_name, points=points)
     print(f"✅ Uploaded {len(points)} embeddings to collection '{collection_name}'")
-
-
-
-
-
 
 
 def embed_sentence(s: str, model) -> list[float]: ...
