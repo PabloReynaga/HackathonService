@@ -2,7 +2,7 @@ from ragger.embed import embed_sentences
 from qdrant_client import QdrantClient
 
 
-def main():
+def query():
     print("hel")
     COLLECTION_NAME = "HACKATHON_COLLECTION"
 
@@ -21,4 +21,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    query()
