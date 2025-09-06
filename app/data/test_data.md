@@ -89,7 +89,7 @@
 ## PRD — Embeddable Website Chatbot for FIFA.com (MVP)
 
 ### TL;DR
-An embeddable chatbot that answers strictly from fifa.com content with enforced citations.
+An embeddable chatbot that answers strictly from fifa.com content with enforced citations.  
 Scope: English only; website pages only (no PDFs).
 
 ### Goals
