@@ -9,7 +9,6 @@ DATA = os.getenv("DATA_SOURCE")
 
 def fetch_data():
     response = requests.get(DATA)
-    print(response.status_code)
     return response.text
 
 def fetch_local_data():

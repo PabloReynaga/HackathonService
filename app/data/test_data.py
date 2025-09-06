@@ -1,4 +1,4 @@
-# Knowledge Base Piola Hackathon — September 6, 2025
+dta = """# Knowledge Base Piola Hackathon — September 6, 2025
 
 ## FIFA World Cup 26™ — Ticket Sales (First Phase)
 
@@ -135,3 +135,4 @@ Scope: English only; website pages only (no PDFs).
 ### Team
 - 2–3 engineers + part-time designer/PM.
 - Timeline: 1 day hackathon → 1–3 weeks to MVP.
+"""
